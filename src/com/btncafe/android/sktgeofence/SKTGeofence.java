@@ -623,6 +623,18 @@ public class SKTGeofence {
 			if (copy.getString("eventCheckType").equals("Stay") && copy.isNull("eventStayMinute")) {
 				copy.put("eventStayMinute", 1);
 			}
+			if (!copy.isNull("name")) {
+				copy.put("eventName", copy.getString("name"));
+			}
+			if (!copy.isNull("storeId")) {
+				
+				JSONArray eventStoreList = new JSONArray();
+				JSONObject storeData = new JSONObject();
+				storeData.put("storeId", copy.getInt("storeId"));
+				eventStoreList.put(storeData);
+				
+				copy.put("eventStoreList", eventStoreList);
+			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
