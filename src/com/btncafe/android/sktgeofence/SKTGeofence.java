@@ -162,6 +162,9 @@ public class SKTGeofence {
 		JSONObject copy = UTIL.COPY_DATA(data);
 
 		try {
+			if (copy.isNull("groupDesc")) {
+				copy.put("groupDesc", copy.getString("groupName"));
+			}
 			if (copy.isNull("groupIcon")) {
 				copy.put("groupIcon", "Fastfood");
 			}
