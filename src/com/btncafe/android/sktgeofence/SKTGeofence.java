@@ -628,6 +628,7 @@ public class SKTGeofence {
 			}
 			if (!copy.isNull("name")) {
 				copy.put("eventName", copy.getString("name"));
+				copy.remove("name");
 			}
 			if (!copy.isNull("storeId")) {
 				
@@ -637,6 +638,7 @@ public class SKTGeofence {
 				eventStoreList.put(storeData);
 				
 				copy.put("eventStoreList", eventStoreList);
+				copy.remove("storeId");
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
