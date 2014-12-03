@@ -623,7 +623,7 @@ public class SKTGeofence {
 			if (copy.isNull("isAllTime")) {
 				copy.put("isAllTime", "Y");
 			}
-			if (copy.getString("eventCheckType").equals("Stay") && copy.isNull("eventStayMinute")) {
+			if (copy.isNull("eventStayMinute")) {
 				copy.put("eventStayMinute", 1);
 			}
 			if (!copy.isNull("name")) {
