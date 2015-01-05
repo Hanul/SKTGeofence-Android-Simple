@@ -10,7 +10,9 @@ SKT Geofence API를 쉽게 사용할 수 있도록 Wrapping한 Library 입니다
 ```XML
 <uses-permission android:name="android.permission.INTERNET" />
 ```
-3. 프로젝트의 `AndroidManifest.xml` 내용 중 `application` 이하에 하단의 내용을 추가합니다. `{{YOUR PACKAGE NAME}}` 부분에는 프로젝트의 패키지 명을 입력합니다.
+
+##### SKTGeofence-Android-Simple의 Receiver를 사용할 경우
+프로젝트의 `AndroidManifest.xml` 내용 중 `application` 이하에 하단의 내용을 추가합니다. `{{YOUR PACKAGE NAME}}` 부분에는 프로젝트의 패키지 명을 입력합니다.
 ```XML
 <receiver android:enabled="true" android:exported="true" android:name="com.btncafe.cordova.sktgeofence.SKTGeofenceServiceReceiver">
 	<intent-filter>
@@ -18,6 +20,9 @@ SKT Geofence API를 쉽게 사용할 수 있도록 Wrapping한 Library 입니다
     </intent-filter>
 </receiver>
 ```
+
+##### Receiver를 직접 구현할 경우
+SKTelecom의 공식 문서 및 `com.btncafe.cordova.sktgeofence.SKTGeofenceServiceReceiver`를 참고하여 Receiver를 직접 구현할 수 있습니다. 이 경우에는 [SKTelecom Geofence API 공식 문서](https://developers.sktelecom.com/content/tapi/Geo-fence/)를 따릅니다.
 
 ## API
 #### 초기화

@@ -16,7 +16,10 @@ public class SKTGeofenceServiceReceiver extends BroadcastReceiver {
 			int storeId = intent.getIntExtra(GeoConstData.STORE_ID, 0);
 
 			CheckInHandler checkInHandler = SKTGeofence.getCheckInHandler();
-			checkInHandler.handle(storeId);
+			
+			if (checkInHandler != null) {
+				checkInHandler.handle(storeId);
+			}
 		}
 	}
 }
